@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 const COMPANIES = ['Blindspace', 'GrantsBlinds', 'Fablereads'];
-const TYPES     = ['Newsletter', 'CRM Update', 'Website Automation'];
-const STATUSES  = ['Draft', 'In Progress', 'Completed', 'Sent/Published'];
+const TYPES     = ['Newsletter', 'Webpage', 'Automation', 'CRM', 'AI Integration', 'Processes', 'Analytics & Tracking'];
+const STATUSES  = ['For Review', 'On Hold', 'Content Needed', 'For Testing', 'Active', 'Designing Phase', 'Completed', 'In-Progress', 'For Development'];
 
 function getThisMonday() {
   const d = new Date();
@@ -19,7 +19,7 @@ const DEFAULT_FORM = {
   type: 'Newsletter',
   title: '',
   description: '',
-  status: 'Draft',
+  status: 'For Review',
   weekStart: getThisMonday(),
 };
 

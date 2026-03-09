@@ -5,8 +5,8 @@ import WeeklyLog from './components/WeeklyLog';
 import EntryModal from './components/EntryModal';
 
 export const COMPANIES = ['Blindspace', 'GrantsBlinds', 'Fablereads'];
-export const TYPES = ['Newsletter', 'CRM Update', 'Website Automation'];
-export const STATUSES = ['Draft', 'In Progress', 'Completed', 'Sent/Published'];
+export const TYPES = ['Newsletter', 'Webpage', 'Automation', 'CRM', 'AI Integration', 'Processes', 'Analytics & Tracking'];
+export const STATUSES = ['For Review', 'On Hold', 'Content Needed', 'For Testing', 'Active', 'Designing Phase', 'Completed', 'In-Progress', 'For Development'];
 
 const generateId = () => Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
 
@@ -26,34 +26,34 @@ const SAMPLE_DATA = [
     type: 'Newsletter',
     title: 'March Weekly Newsletter #1',
     description: 'Product highlights, spring sale promotions, and new arrivals',
-    status: 'Sent/Published',
-    weekStart: getWeekStart(),
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: generateId(),
-    company: 'GrantsBlinds',
-    type: 'CRM Update',
-    title: 'Q1 Customer Segment Refresh',
-    description: 'Updated customer tags, segments, and lead scoring',
     status: 'Completed',
     weekStart: getWeekStart(),
     createdAt: new Date().toISOString(),
   },
   {
     id: generateId(),
+    company: 'GrantsBlinds',
+    type: 'CRM',
+    title: 'Q1 Customer Segment Refresh',
+    description: 'Updated customer tags, segments, and lead scoring',
+    status: 'Active',
+    weekStart: getWeekStart(),
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: generateId(),
     company: 'Fablereads',
-    type: 'Website Automation',
+    type: 'Automation',
     title: 'Email Capture Flow Automation',
     description: 'New automation for email capture on landing page with drip sequence',
-    status: 'In Progress',
+    status: 'In-Progress',
     weekStart: getWeekStart(),
     createdAt: new Date().toISOString(),
   },
   {
     id: generateId(),
     company: 'Blindspace',
-    type: 'CRM Update',
+    type: 'CRM',
     title: 'Klaviyo Segment Update',
     description: 'Synced new product interest segments from Shopify',
     status: 'Completed',
@@ -63,10 +63,10 @@ const SAMPLE_DATA = [
   {
     id: generateId(),
     company: 'GrantsBlinds',
-    type: 'Website Automation',
+    type: 'Webpage',
     title: 'Abandoned Cart Flow Update',
     description: 'Updated timing and copy for abandoned cart email sequence',
-    status: 'Sent/Published',
+    status: 'For Review',
     weekStart: getWeekStart(),
     createdAt: new Date().toISOString(),
   },

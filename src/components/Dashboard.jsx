@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, Mail, Database, Settings, ChevronRight, TrendingUp } from 'lucide-react';
+import { Plus, Mail, Database, Globe, Zap, Cpu, GitBranch, BarChart2, ChevronRight } from 'lucide-react';
 
 export const COMPANY_CONFIG = {
   Blindspace:   { dot: 'bg-blue-400',    badge: 'bg-blue-50 text-blue-700',    card: 'from-blue-50 to-blue-100/60',   border: 'border-blue-200' },
@@ -8,16 +8,25 @@ export const COMPANY_CONFIG = {
 };
 
 export const TYPE_ICONS = {
-  'Newsletter':          Mail,
-  'CRM Update':          Database,
-  'Website Automation':  Settings,
+  'Newsletter':           Mail,
+  'Webpage':              Globe,
+  'Automation':           Zap,
+  'CRM':                  Database,
+  'AI Integration':       Cpu,
+  'Processes':            GitBranch,
+  'Analytics & Tracking': BarChart2,
 };
 
 export const STATUS_STYLES = {
-  'Draft':          'bg-gray-100 text-gray-600',
-  'In Progress':    'bg-amber-50 text-amber-700',
-  'Completed':      'bg-blue-50 text-blue-700',
-  'Sent/Published': 'bg-emerald-50 text-emerald-700',
+  'For Review':      'bg-amber-50 text-amber-700',
+  'On Hold':         'bg-gray-100 text-gray-600',
+  'Content Needed':  'bg-orange-50 text-orange-700',
+  'For Testing':     'bg-sky-50 text-sky-700',
+  'Active':          'bg-emerald-50 text-emerald-700',
+  'Designing Phase': 'bg-violet-50 text-violet-700',
+  'Completed':       'bg-blue-50 text-blue-700',
+  'In-Progress':     'bg-yellow-50 text-yellow-700',
+  'For Development': 'bg-indigo-50 text-indigo-700',
 };
 
 function getThisWeekStart() {
@@ -46,7 +55,7 @@ export default function Dashboard({ entries, onAddEntry, onViewAll }) {
   const thisWeek = entries.filter(e => new Date(e.weekStart) >= weekStart);
 
   const companies = ['Blindspace', 'GrantsBlinds', 'Fablereads'];
-  const types = ['Newsletter', 'CRM Update', 'Website Automation'];
+  const types = ['Newsletter', 'Webpage', 'Automation', 'CRM', 'AI Integration', 'Processes', 'Analytics & Tracking'];
 
   const recentEntries = [...entries]
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -97,7 +106,7 @@ export default function Dashboard({ entries, onAddEntry, onViewAll }) {
       </div>
 
       {/* Type Breakdown */}
-      <div className="grid grid-cols-3 gap-5 mb-6">
+      <div className="grid grid-cols-4 gap-5 mb-6">
         {types.map(type => {
           const Icon = TYPE_ICONS[type];
           const total = entries.filter(e => e.type === type).length;

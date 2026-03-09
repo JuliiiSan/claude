@@ -3,8 +3,8 @@ import { Edit2, Trash2, Plus, Search } from 'lucide-react';
 import { COMPANY_CONFIG, TYPE_ICONS, STATUS_STYLES } from './Dashboard';
 
 const COMPANIES = ['All', 'Blindspace', 'GrantsBlinds', 'Fablereads'];
-const TYPES     = ['All', 'Newsletter', 'CRM Update', 'Website Automation'];
-const STATUSES  = ['All', 'Draft', 'In Progress', 'Completed', 'Sent/Published'];
+const TYPES     = ['All', 'Newsletter', 'Webpage', 'Automation', 'CRM', 'AI Integration', 'Processes', 'Analytics & Tracking'];
+const STATUSES  = ['All', 'For Review', 'On Hold', 'Content Needed', 'For Testing', 'Active', 'Designing Phase', 'Completed', 'In-Progress', 'For Development'];
 
 function StatusBadge({ status }) {
   return (
